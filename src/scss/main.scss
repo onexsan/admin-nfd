@@ -1,0 +1,20 @@
+@import './base/variables.scss';
+@import './base/mixins.scss';
+@import './base/layout.scss';
+
+@import './blocks/sidebar.scss';
+@import './blocks/buttons.scss';
+@import './blocks/inputs.scss';
+@import './blocks/header.scss';
+@import './blocks/footer.scss';
+@import './blocks/slider.scss';
+@import './blocks/socials.scss';
+@import './blocks/form.scss';
+@import './blocks/autocomplete.scss';
+
+@import './sections/home.scss';
+@import './sections/order.scss';
+@import './sections/login.scss';
+
+@import './modals/hamburger.scss';
+@import './modals/order-confirmation.scss';

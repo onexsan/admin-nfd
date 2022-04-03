@@ -1,0 +1,65 @@
+.header {
+  @include phones {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include phones {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 8px;
+      justify-items: end;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+  &__title {
+    color: $green;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .header-address {
+    margin: 0;
+    &__link {
+      font-size: 14px;
+      color: $gray;
+      text-decoration: none;
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 16px;
+        height: 18px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -23px;
+        margin: auto 0;
+        background-image: url('~@/assets/icons/map-balloon.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+      }
+
+      &:hover {
+        filter: brightness(50%);
+
+        &:before {
+          filter: brightness(50%);
+        }
+      }
+    }
+  }
+}

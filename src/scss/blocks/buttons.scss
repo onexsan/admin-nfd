@@ -1,0 +1,144 @@
+button.btn,
+a.btn {
+  padding: 11px 15px;
+  background: linear-gradient(90deg, $green 2.61%, $darkgreen 112.6%);
+  color: $white;
+  border: none;
+
+  &.btn-danger {
+    background: linear-gradient(90deg, #493013 0%, #7b0c3b 100%);
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white;
+      background: linear-gradient(90deg, #35230e 0%, #610a2e 100%);
+    }
+  }
+
+  &:hover {
+    background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
+    color: $white;
+  }
+  &:active {
+    background: linear-gradient(90deg, #076432 2.61%, #013c27 112.6%);
+    color: $white;
+  }
+  &:focus {
+    background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
+    color: $white;
+  }
+  &:disabled {
+    background: $lightgray;
+    color: $white;
+  }
+
+  &--color-reverse {
+    border: none;
+    @include gradient-animation($gradient-green, $gradient-green-dark);
+  }
+
+  &.btn-primary {
+    background: $bright-blue;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 11px 7px;
+    line-height: 1;
+    &:hover,
+    &:active,
+    &:focus {
+      background: $dark-blue;
+    }
+  }
+}
+
+.link {
+  background-color: transparent;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  text-decoration: none;
+
+  color: $black;
+
+  &:hover {
+    color: $green;
+  }
+
+  &:disabled {
+    color: $gray;
+  }
+}
+
+.link--green {
+  @extend .link;
+  color: $green;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.link--lang {
+  @extend .link;
+  font-size: 13px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  &:hover {
+    border: 1px solid $white;
+  }
+
+  &:active {
+    color: $green;
+  }
+}
+
+.menu-btn {
+  background-color: transparent;
+  border: 1px solid transparent;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  overflow: hidden;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $green;
+  }
+
+  &__icon {
+    &:hover {
+      cursor: pointer;
+    }
+    @include phones {
+      color: $black;
+    }
+  }
+}
+
+.close-btn {
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0;
+  color: $white;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $green;
+  }
+}

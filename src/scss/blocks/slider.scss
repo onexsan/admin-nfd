@@ -1,0 +1,118 @@
+.slider--custom {
+  width: 100%;
+  height: 100%;
+  background-color: $darkgreen;
+
+  .slider-item {
+    &:nth-child(2) {
+      .slide {
+        background-image: url('~@/assets/img/slide-2.png');
+
+        .btn--color-reverse {
+          border: none;
+          @include gradient-animation($gradient-blue, $gradient-blue-dark);
+        }
+      }
+    }
+    &:nth-child(3) {
+      .slide {
+        background-image: url('~@/assets/img/slide-3.png');
+
+        .btn--color-reverse {
+          border: none;
+          @include gradient-animation($gradient-red, $gradient-red-dark);
+        }
+      }
+    }
+    &:nth-child(4) {
+      .slide {
+        background-image: url('~@/assets/img/slide-4.png');
+
+        .btn--color-reverse {
+          border: none;
+          @include gradient-animation($gradient-purple, $gradient-purple-dark);
+        }
+      }
+    }
+  }
+
+  .slide {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('~@/assets/img/slide-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:before {
+      content: '';
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+
+    &__content {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0px 33px;
+      z-index: 5;
+
+      @include sm-desktops {
+        margin: auto 32px;
+      }
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 40px;
+      color: $white;
+      margin-bottom: 8px;
+    }
+
+    &__desc {
+      font-weight: 300;
+      font-size: 24px;
+      margin-bottom: 32px;
+      color: $white;
+    }
+
+    &__btn {
+      max-width: 164px;
+    }
+  }
+
+  .slider-btn {
+    &:hover,
+    &:focus {
+      background-color: rgba(14, 194, 97, 0.2);
+    }
+  }
+
+  .slider-indicators .slider-indicator-icon {
+    width: 8px;
+    height: 8px;
+    margin: 0px 4px;
+    background-color: $white;
+
+    &.slider-indicator-active,
+    &:hover,
+    &:focus {
+      background-color: $green;
+    }
+  }
+}

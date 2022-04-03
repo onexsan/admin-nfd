@@ -1,0 +1,42 @@
+.footer {
+  width: 100%;
+  @include phones {
+    background-color: $black;
+  }
+  .container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include phones {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: end;
+      row-gap: 8px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  &__copyright {
+    font-size: 13px;
+    color: $gray;
+
+    @include phones {
+      color: $lightgray;
+    }
+  }
+  &__phone {
+    font-size: 13px;
+
+    @include phones {
+      color: $green;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}

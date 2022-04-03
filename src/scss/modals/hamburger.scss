@@ -1,0 +1,108 @@
+#hamburger-modal {
+  .modal-dialog {
+    margin: auto 0;
+    max-width: none;
+    width: calc(50% + 35px);
+    height: 100%;
+
+    @include lg-tablets {
+      width: 100%;
+    }
+
+    @include phones {
+      margin: 0;
+    }
+  }
+
+  .modal-content {
+    border-radius: 0px;
+    background-color: $black;
+    height: 100%;
+    border: none;
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+}
+
+.hamburger-modal {
+  position: relative;
+  &__close {
+    position: absolute;
+    top: 28px;
+    left: 25px;
+
+    @include phones {
+      left: 23px;
+    }
+  }
+
+  &__lang-btn.link--lang {
+    display: none;
+
+    @include phones {
+      display: flex;
+      position: absolute;
+      bottom: 28px;
+      left: 18px;
+      color: $green;
+    }
+  }
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 128px;
+
+    @include sm-desktops {
+      padding-left: 97px;
+    }
+
+    @include phones {
+      padding-left: 28px;
+      padding-top: 80px;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.hamburger-nav {
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 38px;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 32px;
+    color: $white;
+    text-transform: uppercase;
+
+    @include tablets {
+      font-size: 28px;
+    }
+
+    @include phones {
+      font-size: 22px;
+    }
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &__item {
+    &.active {
+      .hamburger-nav__link {
+        color: $green;
+        text-decoration: none;
+      }
+    }
+  }
+}
