@@ -1,0 +1,176 @@
+.admin-header {
+  background-color: #ffffff;
+
+  .admin__container {
+    display: grid;
+    grid-template-columns: 60% 10% 30%;
+    align-items: center;
+    height: 68px;
+
+    @include phones {
+      grid-template-columns: 10% 35% 20% 35%;
+    }
+  }
+}
+
+.admin-header-menu {
+  display: none;
+  padding: 7px 0px;
+  padding-right: 15px;
+  border-right: 1px solid #cacedb;
+  height: 100%;
+
+  @include phones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.admin-search {
+  height: 100%;
+  border-right: 1px solid #cacedb;
+  position: relative;
+
+  &__input {
+    font-weight: 400;
+    font-size: 13px;
+    height: 100%;
+    width: 100%;
+    padding: 0px 30px;
+    border: none;
+    margin: 0;
+
+    @include phones {
+      font-size: 11px;
+      padding: 10px;
+      padding-left: 35px;
+    }
+  }
+
+  &:before {
+    content: '';
+    height: 14px;
+    width: 14px;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    margin: auto 0;
+    background-image: url('~@/assets/icons/search-icon.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include phones {
+      width: 12px;
+      height: 12px;
+      left: 15px;
+    }
+  }
+}
+
+.admin-notifications {
+  border-right: 1px solid #cacedb;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__link {
+    padding: 21px;
+    display: block;
+    position: relative;
+    margin-bottom: 0;
+
+    &:hover {
+      .admin-notifications__icon {
+        filter: invert(37%) sepia(77%) saturate(4575%) hue-rotate(199deg)
+          brightness(102%) contrast(110%);
+      }
+    }
+  }
+
+  &__count {
+    margin: 0;
+    position: absolute;
+    bottom: 15px;
+    right: 12px;
+    width: 14px;
+    height: 14px;
+    font-size: 9px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $error-red;
+    border-radius: 100%;
+  }
+}
+
+.admin-user {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 13px 0px;
+  padding-left: 25px;
+  height: 100%;
+
+  @include phones {
+    padding: 8px 5px;
+  }
+
+  &-photo {
+    width: 42px;
+    height: 42px;
+
+    &__img {
+      border-radius: 100%;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__link {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 13px;
+    align-items: center;
+    position: relative;
+    margin-bottom: 0;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    color: #5a6169;
+
+    &:hover {
+      color: #000000;
+
+      &::before {
+        border-color: #000000 transparent transparent transparent;
+      }
+    }
+
+    @include phones {
+      font-size: 12px;
+    }
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 4.5px 0 4.5px;
+      border-color: #aabacc transparent transparent transparent;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto 0;
+    }
+  }
+}

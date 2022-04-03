@@ -1,20 +1,38 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Login from '../views/Login.vue';
+import OrderList from '../views/OrderList.vue';
+
+import AdminSidebar from '../components/layout/admin/AdminSidebar.vue';
+import AdminHeader from '../components/layout/admin/AdminHeader.vue';
+import AdminFooter from '../components/layout/admin/AdminFooter.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'Login',
+    name: 'Home',
     component: Login,
     meta: {
       title: 'Need For Drive',
       layout: 'auth-layout',
     },
   },
-
+  {
+    path: '/admin/order-list',
+    name: 'OrderList',
+    components: {
+      default: OrderList,
+      Sidebar: AdminSidebar,
+      Header: AdminHeader,
+      Footer: AdminFooter,
+    },
+    meta: {
+      title: 'Need For Drive',
+      layout: 'admin-layout',
+    },
+  },
   {
     path: '/login/',
     name: 'Login',

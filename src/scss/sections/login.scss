@@ -81,27 +81,4 @@
       width: 110px;
     }
   }
-
-  &-logo {
-    display: flex;
-    align-items: center;
-    margin-bottom: 17px;
-
-    &__icon {
-      width: 45px;
-      height: 45px;
-      overflow: hidden;
-    }
-
-    &__title {
-      color: $dark-blue;
-      font-weight: 400;
-      font-size: 24px;
-      margin-left: 12px;
-
-      @include phones {
-        font-size: 18px;
-      }
-    }
-  }
 }

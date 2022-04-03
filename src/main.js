@@ -5,9 +5,11 @@ import App from './App.vue';
 
 import DefaultLayout from './components/layout/DefaultLayout.vue';
 import AuthLayout from './components/layout/AuthLayout.vue';
+import AdminLayout from './components/layout/admin/AdminLayout.vue';
 
 Vue.component('default-layout', DefaultLayout);
 Vue.component('auth-layout', AuthLayout);
+Vue.component('admin-layout', AdminLayout);
 
 import { BootstrapVue } from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';

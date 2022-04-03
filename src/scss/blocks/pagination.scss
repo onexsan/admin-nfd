@@ -1,0 +1,49 @@
+.VuePagination__count {
+  display: none;
+}
+
+.admin-pagination {
+  .page-link,
+  .page-item .page-link {
+    border: 1px solid transparent;
+    border-radius: 100%;
+    font-size: 12px;
+  }
+
+  .page-item {
+    width: 18px;
+    height: 18px;
+    margin-right: 2px;
+
+    .page-link {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      color: $bright-blue;
+
+      &.active {
+        background: $bright-blue;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .VuePagination ul {
+    margin-bottom: 0;
+  }
+
+  .page-item:first-child .page-link,
+  .page-item:last-child .page-link {
+    border-radius: 100%;
+  }
+
+  .VuePagination__pagination-item-next-page .page-link,
+  .VuePagination__pagination-item-prev-page .page-link,
+  .page-item.disabled .page-link {
+    font-size: 10px;
+    border: 1px solid transparent;
+  }
+}

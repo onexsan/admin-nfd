@@ -51,8 +51,34 @@ a.btn {
       background: $dark-blue;
     }
   }
-}
 
+  &.btn-outline-primary {
+    border: 1px solid #becad6;
+    background: #ffffff;
+    color: #5a6169;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid #becad6;
+      background: $gray-admin;
+    }
+  }
+}
+.admin-link {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: $bright-blue;
+  text-decoration: none;
+
+  &:hover {
+    color: $dark-blue;
+  }
+
+  &:disabled {
+    color: $gray;
+  }
+}
 .link {
   background-color: transparent;
   border: 1px solid transparent;
@@ -61,7 +87,6 @@ a.btn {
   justify-content: center;
   padding: 0;
   text-decoration: none;
-
   color: $black;
 
   &:hover {
