@@ -47,7 +47,9 @@
         </fieldset>
         <fieldset class="admin-block-header__controls">
           <div class="form-group">
-            <button class="btn admin-block-header__reset-btn">Reset</button>
+            <button class="btn admin-block-header__reset-btn btn-delete">
+              Reset
+            </button>
           </div>
           <div class="form-group">
             <button

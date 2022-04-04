@@ -123,11 +123,3 @@ button.btn.admin-block-header__reset-btn {
     width: 100%;
   }
 }
-button.btn.admin-block-header__reset-btn {
-  background: $error-red;
-  color: #ffffff;
-
-  &:hover {
-    background-color: $gradient-red;
-  }
-}

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Login from '../views/Login.vue';
 import OrderList from '../views/OrderList.vue';
 import Entities from '../views/Entities.vue';
+import EditPage from '../views/EditPage.vue';
 
 import AdminSidebar from '../components/layout/admin/AdminSidebar.vue';
 import AdminHeader from '../components/layout/admin/AdminHeader.vue';
@@ -39,6 +40,20 @@ const routes = [
     name: 'Entities',
     components: {
       default: Entities,
+      Sidebar: AdminSidebar,
+      Header: AdminHeader,
+      Footer: AdminFooter,
+    },
+    meta: {
+      title: 'Need For Drive',
+      layout: 'admin-layout',
+    },
+  },
+  {
+    path: '/admin/edit/:id',
+    name: 'EditPage',
+    components: {
+      default: EditPage,
       Sidebar: AdminSidebar,
       Header: AdminHeader,
       Footer: AdminFooter,

@@ -1,0 +1,177 @@
+.admin-edit {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 30px;
+  align-items: flex-start;
+
+  &.admin-edit--details-only {
+    grid-template-columns: 1fr;
+  }
+
+  @include sm-desktops {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+.edit-card {
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    max-width: 245px;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    color: $dark-blue;
+    line-height: 1;
+
+    @include phones {
+      font-size: 20px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    color: #818ea3;
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    @include phones {
+      padding: 15px;
+    }
+  }
+
+  &__label {
+    font-weight: 400;
+    font-size: 13px;
+    color: #868e96;
+  }
+
+  &__progress {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    @include phones {
+      padding: 15px;
+    }
+
+    .edit-card-progress__desc {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .edit-card-progress__percent {
+      font-weight: 400;
+      font-size: 11px;
+      text-align: right;
+      color: #5a6169;
+    }
+
+    .progress {
+      margin-bottom: 0;
+      height: 5px;
+      background: #ffffff;
+      box-shadow: inset 0px 0.5px 4px rgba(0, 0, 0, 0.25);
+
+      .progress-bar {
+        border-radius: 0.25rem;
+      }
+    }
+  }
+
+  &__description {
+    padding: 22px 20px;
+
+    @include phones {
+      padding: 15px;
+    }
+  }
+
+  &__text {
+    margin-top: 14px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #5a6169;
+
+    @include phones {
+      font-size: 12px;
+    }
+  }
+}
+
+.edit-main {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include phones {
+    min-height: 1px;
+  }
+
+  &__legend {
+    font-weight: 500;
+    font-size: 18px;
+    color: $dark-blue;
+
+    @include phones {
+      font-size: 16px;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include phones {
+      flex-direction: column;
+    }
+
+    .edit-main-controls__group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      button.btn {
+        font-size: 12px;
+        margin-right: 12px;
+        padding: 7px 10px;
+        min-width: 110px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @include phones {
+          min-width: none;
+        }
+      }
+    }
+  }
+}

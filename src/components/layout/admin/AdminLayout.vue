@@ -3,7 +3,7 @@
     <router-view name="Sidebar" />
     <div class="main-content">
       <router-view name="Header" />
-      <div class="container admin__container">
+      <div class="container admin__container admin-view">
         <router-view />
       </div>
       <router-view name="Footer" />
@@ -43,5 +43,9 @@ export default {
   grid-template-rows: auto 1fr auto;
   gap: 0px;
   background-color: $gray-admin;
+
+  .admin-view {
+    margin-bottom: 50px;
+  }
 }
 </style>
