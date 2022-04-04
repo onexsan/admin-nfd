@@ -3,10 +3,11 @@
     <AdminPagination
       v-model="page"
       :records="records"
-      :per-page="5"
+      :per-page="perPage"
       @paginate="changePage"
       :options="{
         chunk: 5,
+        chunksNavigation: 'scroll',
       }"
     />
   </div>
@@ -15,7 +16,7 @@
 <script>
 import AdminPagination from 'vue-pagination-2';
 export default {
-  props: ['records'],
+  props: ['records', 'perPage'],
   data() {
     return {
       page: 1,
