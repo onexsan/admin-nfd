@@ -1,11 +1,12 @@
 .admin-edit {
   display: grid;
-  grid-template-columns: 30% 1fr;
+  grid-template-columns: 35% 1fr;
   gap: 30px;
   align-items: flex-start;
 
   &.admin-edit--details-only {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   @include sm-desktops {
@@ -15,6 +16,10 @@
 }
 
 .edit-card {
+  @include sm-desktops {
+    height: 100%;
+  }
+
   .form-group {
     margin-bottom: 0;
   }
@@ -125,13 +130,14 @@
 }
 
 .edit-main {
-  min-height: 80vh;
+  min-height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  @include phones {
+  @include sm-desktops {
     min-height: 1px;
+    height: 100%;
   }
 
   &__legend {
@@ -145,6 +151,7 @@
   }
 
   &__controls {
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -157,6 +164,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      @include phones {
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
 
       button.btn {
         font-size: 12px;
@@ -172,6 +187,50 @@
           min-width: none;
         }
       }
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+
+    .input-group-add {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+
+      input {
+        width: 100%;
+      }
+
+      .btn-add {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  label.label {
+    margin-bottom: 4px;
+  }
+
+  .row {
+    margin: 0;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @include tablets {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .col {
+      padding: 0;
     }
   }
 }

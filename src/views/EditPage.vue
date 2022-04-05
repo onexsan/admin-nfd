@@ -34,7 +34,10 @@
           <legend class="edit-main__legend">Настройки автомобиля</legend>
           <b-row>
             <b-col>
-              <div class="form-group">
+              <div
+                class="form-group"
+                :class="{ 'form-group--error': $v.itemData.model.$error }"
+              >
                 <label for="model" class="label">Модель автомобиля</label>
                 <input
                   type="text"
@@ -42,11 +45,16 @@
                   id="model"
                   class="text-input"
                   placeholder="Укажите модель"
+                  v-model="itemData.model"
                 />
+                <p class="error">Поле обязательно для заполнения.</p>
               </div>
             </b-col>
             <b-col>
-              <div class="form-group">
+              <div
+                class="form-group"
+                :class="{ 'form-group--error': $v.itemData.type.$error }"
+              >
                 <label for="type" class="label">Тип автомобиля</label>
                 <input
                   type="text"
@@ -54,21 +62,32 @@
                   id="type"
                   class="text-input"
                   placeholder="Укажите тип"
+                  v-model="itemData.type"
                 />
+                <p class="error">Поле обязательно для заполнения.</p>
               </div>
             </b-col>
           </b-row>
           <b-row>
             <b-col>
-              <div class="form-group">
+              <div
+                class="form-group"
+                :class="{ 'form-group--error': $v.itemData.color.$error }"
+              >
                 <label for="colors" class="label">Доступные цвета</label>
-                <input
-                  type="text"
-                  name="colors"
-                  id="colors"
-                  class="text-input"
-                  placeholder="Укажите цвет"
-                />
+                <div class="input-group-add">
+                  <input
+                    type="text"
+                    name="colors"
+                    id="colors"
+                    class="text-input"
+                    placeholder="Укажите цвет"
+                    v-model="itemData.color"
+                  />
+                  <button class="btn btn-add"></button>
+                </div>
+
+                <p class="error">Поле обязательно для заполнения.</p>
               </div>
               <div class="form-group-checkbox">
                 <label class="checkbox checkbox--blue" for="color1">
@@ -111,8 +130,14 @@
         </fieldset>
         <fieldset class="edit-main__controls edit-main-controls">
           <div class="edit-main-controls__group">
-            <button class="btn btn-primary" type="submit">Сохранить</button>
-            <button class="btn btn-secondary" type="submit">Отменить</button>
+            <button
+              class="btn btn-primary"
+              type="submit"
+              @click.prevent="submitForm()"
+            >
+              Сохранить
+            </button>
+            <button class="btn btn-secondary">Отменить</button>
           </div>
           <div class="edit-main-controls__group">
             <button class="btn btn-delete">Удалить</button>
@@ -122,6 +147,33 @@
     </div>
   </div>
 </template>
+
+<script>
+import { required } from 'vuelidate/lib/validators';
+export default {
+  data() {
+    return {
+      itemData: {
+        model: '',
+        type: '',
+        color: '',
+      },
+    };
+  },
+  validations: {
+    itemData: {
+      model: { required },
+      type: { required },
+      color: { required },
+    },
+  },
+  methods: {
+    submitForm() {
+      this.$v.$touch();
+    },
+  },
+};
+</script>
 
 <style>
 .admin-content,
