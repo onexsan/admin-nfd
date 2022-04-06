@@ -139,8 +139,13 @@
             </button>
             <button class="btn btn-secondary">Отменить</button>
           </div>
-          <div class="edit-main-controls__group">
-            <button class="btn btn-delete">Удалить</button>
+          <div
+            class="edit-main-controls__group"
+            @click.prevent="showTop = !showTop"
+          >
+            <button class="btn btn-delete" @click.prevent="showErrorAlert">
+              Удалить
+            </button>
           </div>
         </fieldset>
       </form>
@@ -158,6 +163,7 @@ export default {
         type: '',
         color: '',
       },
+      showTop: false,
     };
   },
   validations: {
@@ -171,13 +177,9 @@ export default {
     submitForm() {
       this.$v.$touch();
     },
+    showErrorAlert() {
+      this.$store.commit('show_error_alert', 'Test message');
+    },
   },
 };
 </script>
-
-<style>
-.admin-content,
-.admin-edit {
-  height: 100%;
-}
-</style>
