@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Login from '../views/Login.vue';
+import Error from '../views/Error.vue';
 import OrderList from '../views/OrderList.vue';
 import Entities from '../views/Entities.vue';
 import EditPage from '../views/EditPage.vue';
@@ -70,6 +71,20 @@ const routes = [
     meta: {
       title: 'Need For Drive',
       layout: 'auth-layout',
+    },
+  },
+  {
+    path: '/admin/error/',
+    name: 'Error',
+    components: {
+      default: Error,
+      Sidebar: AdminSidebar,
+      Header: AdminHeader,
+      Footer: AdminFooter,
+    },
+    meta: {
+      title: 'Need For Drive',
+      layout: 'admin-layout',
     },
   },
 ];
