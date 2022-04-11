@@ -10,16 +10,16 @@ import AdminSidebar from '../components/layout/admin/AdminSidebar.vue';
 import AdminHeader from '../components/layout/admin/AdminHeader.vue';
 import AdminFooter from '../components/layout/admin/AdminFooter.vue';
 
+import store from '../store/index.js';
+
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Login,
-    meta: {
-      title: 'Need For Drive',
-      layout: 'auth-layout',
+    redirect: () => {
+      return { path: '/admin/order-list/' };
     },
   },
   {
@@ -110,6 +110,13 @@ router.beforeEach((to, from, next) => {
     document.title = nearestWithTitle.meta.title;
   } else if (previousNearestWithMeta) {
     document.title = previousNearestWithMeta.meta.title;
+  }
+
+  const isLoggedIn = store.getters.isLoggedIn;
+  const isAdminPage = to.fullPath.includes('admin');
+
+  if (isAdminPage && !isLoggedIn && to.name !== 'Login') {
+    next({ name: 'Login' });
   }
 
   next();

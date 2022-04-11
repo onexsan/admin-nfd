@@ -15,23 +15,23 @@
           <fieldset>
             <div
               class="form-group"
-              :class="{ 'form-group--error': $v.loginData.email.$error }"
+              :class="{ 'form-group--error': $v.loginData.username.$error }"
             >
-              <label for="email" class="label login-form__label">Почта</label>
+              <label for="username" class="label login-form__label"
+                >Логин</label
+              >
               <input
-                type="email"
-                name="email"
-                id="email"
+                type="text"
+                name="username"
+                id="username"
                 class="text-input"
                 placeholder="Введите e-mail"
-                v-model="loginData.email"
+                v-model="loginData.username"
               />
               <p class="error">
                 {{
-                  !$v.loginData.email.required
+                  !$v.loginData.username.required
                     ? 'Поле обязательно для заполнения'
-                    : !$v.loginData.email.email
-                    ? 'Укажите корректный e-mail.'
                     : 'Проверьте правильность заполнения.'
                 }}
               </p>
@@ -48,6 +48,7 @@
                 class="text-input"
                 placeholder="Введите пароль"
                 v-model="loginData.password"
+                autocomplete="on"
               />
               <p class="error">
                 {{
@@ -66,6 +67,7 @@
               <button
                 class="btn btn-primary login-form__btn"
                 @click.prevent="login"
+                :disabled="authStatus === 'loading'"
               >
                 Войти
               </button>
@@ -78,28 +80,35 @@
 </template>
 
 <script>
-import { required, email } from 'vuelidate/lib/validators';
+import { required } from 'vuelidate/lib/validators';
+import { mapGetters } from 'vuex';
 
 export default {
   data() {
     return {
       loginData: {
-        email: '',
+        username: '',
         password: '',
       },
     };
   },
+  computed: {
+    ...mapGetters(['authStatus']),
+  },
   methods: {
     login() {
       this.$v.$touch();
-      console.log(this.loginData);
+      if (!this.$v.$invalid) {
+        this.$store
+          .dispatch('login', this.loginData)
+          .then(() => this.$router.push('/'));
+      }
     },
   },
   validations: {
     loginData: {
-      email: {
+      username: {
         required,
-        email,
       },
       password: {
         required,

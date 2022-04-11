@@ -26,17 +26,36 @@
         </a>
       </div>
       <div class="admin-header__user admin-user">
-        <a href="#" class="admin-user__link">
-          <div class="admin-user__photo admin-user-photo">
-            <img
-              :src="require('@/assets/img/user-avatar.png')"
-              alt="User photo"
-              class="admin-user-photo__img"
-            />
-          </div>
-          <div class="admin-user__name">Admin</div>
-        </a>
+        <b-dropdown right block>
+          <template #button-content>
+            <div class="admin-user__link">
+              <div class="admin-user__photo admin-user-photo">
+                <img
+                  :src="require('@/assets/img/user-avatar.png')"
+                  alt="User photo"
+                  class="admin-user-photo__img"
+                />
+              </div>
+              <div class="admin-user__name">Admin</div>
+            </div>
+          </template>
+          <b-dropdown-item-button @click.prevent="logout"
+            >Выйти</b-dropdown-item-button
+          >
+        </b-dropdown>
       </div>
     </div>
   </header>
 </template>
+
+<script>
+export default {
+  methods: {
+    logout() {
+      this.$store.dispatch('logout').then(() => {
+        this.$router.push('/login');
+      });
+    },
+  },
+};
+</script>
