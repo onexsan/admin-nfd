@@ -39,7 +39,7 @@ const ySettings = {
 };
 Vue.use(YmapPlugin, ySettings);
 
-import ImageFallBack from './imagefallback';
+import ImageFallBack from './directives/imagefallback';
 Vue.directive('image-fall-back', ImageFallBack);
 
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
