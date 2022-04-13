@@ -21,10 +21,10 @@
                 >Логин</label
               >
               <input
-                type="text"
-                name="username"
-                id="username"
                 class="text-input"
+                type="email"
+                name="email"
+                id="email"
                 placeholder="Введите e-mail"
                 v-model="loginData.username"
               />
@@ -42,10 +42,10 @@
             >
               <label for="pass" class="label login-form__label">Пароль</label>
               <input
+                class="text-input"
                 type="password"
                 id="pass"
                 name="pass"
-                class="text-input"
                 placeholder="Введите пароль"
                 v-model="loginData.password"
                 autocomplete="on"
@@ -61,7 +61,7 @@
           </fieldset>
           <fieldset class="login-form__footer">
             <div class="form-group">
-              <a href="#" class="login-form__link">Запросить доступ</a>
+              <a class="login-form__link" href="#">Запросить доступ</a>
             </div>
             <div class="form-group">
               <button

@@ -19,6 +19,19 @@ const routes = [
     path: '/',
     name: 'Home',
     redirect: () => {
+      const isLoggedIn = store.getters.isLoggedIn;
+
+      if (isLoggedIn) {
+        return { path: '/admin/' };
+      }
+
+      return { path: '/login/' };
+    },
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    redirect: () => {
       return { path: '/admin/order-list/' };
     },
   },
@@ -85,6 +98,36 @@ const routes = [
     meta: {
       title: 'Need For Drive',
       layout: 'admin-layout',
+    },
+  },
+  {
+    path: '/admin/*',
+    name: 'Error404',
+    components: {
+      default: Error,
+      Sidebar: AdminSidebar,
+      Header: AdminHeader,
+      Footer: AdminFooter,
+    },
+    meta: {
+      title: 'Need For Drive',
+      layout: 'admin-layout',
+    },
+  },
+  {
+    path: '*',
+    name: 'UnauthorizedError404',
+    component: Error,
+    meta: {
+      title: 'Need For Drive',
+      layout: 'auth-layout',
+    },
+    redirect: () => {
+      const isLoggedIn = store.getters.isLoggedIn;
+
+      if (isLoggedIn) {
+        return { path: '/admin/404' };
+      }
     },
   },
 ];

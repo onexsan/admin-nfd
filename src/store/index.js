@@ -126,6 +126,11 @@ export default new Vuex.Store({
           })
           .catch((err) => {
             commit('show_error_alert', err.message);
+
+            localStorage.removeItem('token');
+            localStorage.removeItem('refresh_token');
+
+            delete axios.defaults.headers.common['Authorization'];
             reject();
           });
       });
