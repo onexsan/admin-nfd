@@ -1,13 +1,13 @@
 <template>
   <div class="admin-pagination">
     <AdminPagination
-      v-model="page"
       :records="records"
       :per-page="5"
-      @paginate="changePage"
       :options="{
         chunk: 5,
       }"
+      @paginate="changePage"
+      v-model="page"
     />
   </div>
 </template>
@@ -15,14 +15,16 @@
 <script>
 import AdminPagination from 'vue-pagination-2';
 export default {
-  props: ['records'],
+  components: {
+    AdminPagination,
+  },
+  props: {
+    records: Number,
+  },
   data() {
     return {
       page: 1,
     };
-  },
-  components: {
-    AdminPagination,
   },
   methods: {
     changePage(page) {

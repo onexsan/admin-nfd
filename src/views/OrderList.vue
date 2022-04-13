@@ -6,9 +6,9 @@
         <fieldset class="admin-orders-header__filters">
           <div class="form-group">
             <b-form-select
+              class="admin-select"
               name="time"
               id="time"
-              class="admin-select"
               v-model="selected.range"
             >
               <b-form-select-option :value="null"
@@ -18,9 +18,9 @@
           </div>
           <div class="form-group">
             <b-form-select
+              class="admin-select"
               name="model"
               id="model"
-              class="admin-select"
               v-model="selected.model"
             >
               <b-form-select-option :value="null">Elantra</b-form-select-option>
@@ -28,9 +28,9 @@
           </div>
           <div class="form-group">
             <b-form-select
+              class="admin-select"
               name="city"
               id="city"
-              class="admin-select"
               v-model="selected.city"
             >
               <b-form-select-option :value="null"
@@ -40,9 +40,9 @@
           </div>
           <div class="form-group">
             <b-form-select
+              class="admin-select"
               name="status"
               id="status"
-              class="admin-select"
               v-model="selected.status"
             >
               <b-form-select-option :value="null"
@@ -74,7 +74,8 @@
 
 <script>
 import Pagination from '@/components/common/Pagination.vue';
-import AdminOrdersItem from '@/components/pages/admin/order-list/AdminOrdersItem.vue';
+import AdminOrdersItem from '@/components/order-list/AdminOrdersItem.vue';
+
 export default {
   components: {
     Pagination,

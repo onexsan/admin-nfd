@@ -1,8 +1,12 @@
 <template>
   <nav class="admin-sidebar__nav admin-sidebar-nav">
     <ul class="admin-sidebar-nav__list">
-      <li class="admin-sidebar-nav__item admin-sidebar-nav__item--active">
-        <router-link to="/" class="admin-sidebar-nav__link">
+      <li class="admin-sidebar-nav__item">
+        <router-link
+          to="/"
+          class="admin-sidebar-nav__link"
+          exact-active-class="admin-sidebar-nav__link--active"
+        >
           <div class="admin-sidebar-nav__icon">
             <svg width="13" height="14">
               <use xlink:href="#edit-icon"></use>
@@ -12,7 +16,11 @@
         </router-link>
       </li>
       <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
+        <router-link
+          to="/"
+          class="admin-sidebar-nav__link"
+          exact-active-class="admin-sidebar-nav__link--active"
+        >
           <div class="admin-sidebar-nav__icon">
             <svg width="13" height="14">
               <use xlink:href="#posts-icon"></use>
@@ -22,7 +30,11 @@
         </router-link>
       </li>
       <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
+        <router-link
+          to="/admin/order-list/"
+          class="admin-sidebar-nav__link"
+          exact-active-class="admin-sidebar-nav__link--active"
+        >
           <div class="admin-sidebar-nav__icon">
             <svg width="13" height="14">
               <use xlink:href="#add-icon"></use>
@@ -32,7 +44,11 @@
         </router-link>
       </li>
       <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
+        <router-link
+          to="/"
+          class="admin-sidebar-nav__link"
+          exact-active-class="admin-sidebar-nav__link--active"
+        >
           <div class="admin-sidebar-nav__icon">
             <svg width="13" height="14">
               <use xlink:href="#overview-icon"></use>
@@ -42,7 +58,11 @@
         </router-link>
       </li>
       <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
+        <router-link
+          to="/"
+          class="admin-sidebar-nav__link"
+          exact-active-class="admin-sidebar-nav__link--active"
+        >
           <div class="admin-sidebar-nav__icon">
             <svg width="13" height="14">
               <use xlink:href="#forms-icon"></use>
@@ -52,7 +72,11 @@
         </router-link>
       </li>
       <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
+        <router-link
+          to="/"
+          class="admin-sidebar-nav__link"
+          exact-active-class="admin-sidebar-nav__link--active"
+        >
           <div class="admin-sidebar-nav__icon">
             <svg width="13" height="14">
               <use xlink:href="#user-icon"></use>
@@ -62,7 +86,11 @@
         </router-link>
       </li>
       <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
+        <router-link
+          to="/"
+          class="admin-sidebar-nav__link"
+          exact-active-class="admin-sidebar-nav__link--active"
+        >
           <div class="admin-sidebar-nav__icon">
             <svg width="13" height="14">
               <use xlink:href="#error-icon"></use>

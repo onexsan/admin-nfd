@@ -13,10 +13,8 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Login,
-    meta: {
-      title: 'Need For Drive',
-      layout: 'auth-layout',
+    redirect: () => {
+      return { path: '/login/' };
     },
   },
   {
