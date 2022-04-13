@@ -7,14 +7,11 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    name: 'Login',
-    component: Login,
-    meta: {
-      title: 'Need For Drive',
-      layout: 'auth-layout',
+    name: 'Home',
+    redirect: () => {
+      return { path: '/login/' };
     },
   },
-
   {
     path: '/login/',
     name: 'Login',

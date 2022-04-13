@@ -19,10 +19,10 @@
             >
               <label for="email" class="label login-form__label">Почта</label>
               <input
+                class="text-input"
                 type="email"
                 name="email"
                 id="email"
-                class="text-input"
                 placeholder="Введите e-mail"
                 v-model="loginData.email"
               />
@@ -42,10 +42,10 @@
             >
               <label for="pass" class="label login-form__label">Пароль</label>
               <input
+                class="text-input"
                 type="password"
                 id="pass"
                 name="pass"
-                class="text-input"
                 placeholder="Введите пароль"
                 v-model="loginData.password"
               />
@@ -60,7 +60,7 @@
           </fieldset>
           <fieldset class="login-form__footer">
             <div class="form-group">
-              <a href="#" class="login-form__link">Запросить доступ</a>
+              <a class="login-form__link" href="#">Запросить доступ</a>
             </div>
             <div class="form-group">
               <button
