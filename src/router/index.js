@@ -19,7 +19,7 @@ const routes = [
     path: '/',
     name: 'Home',
     redirect: () => {
-      const isLoggedIn = store.getters.isLoggedIn;
+      const isLoggedIn = store.getters['auth/isLoggedIn'];
 
       if (isLoggedIn) {
         return { path: '/admin/' };
@@ -123,7 +123,7 @@ const routes = [
       layout: 'auth-layout',
     },
     redirect: () => {
-      const isLoggedIn = store.getters.isLoggedIn;
+      const isLoggedIn = store.getters['auth/isLoggedIn'];
 
       if (isLoggedIn) {
         return { path: '/admin/404' };
@@ -155,7 +155,7 @@ router.beforeEach((to, from, next) => {
     document.title = previousNearestWithMeta.meta.title;
   }
 
-  const isLoggedIn = store.getters.isLoggedIn;
+  const isLoggedIn = store.getters['auth/isLoggedIn'];
   const isAdminPage = to.fullPath.includes('admin');
 
   if (isAdminPage && !isLoggedIn && to.name !== 'Login') {

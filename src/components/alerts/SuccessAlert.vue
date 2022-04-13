@@ -1,24 +1,44 @@
 <template>
   <b-alert
-    :show="successAlert.show"
     class="admin-notification"
+    ref="successAlert"
     variant="success"
+    :show="successAlert.show"
   >
     <span class="alert-icon alert-icon--success"></span>
     {{ successAlert.message }}
 
-    <button class="close" @click.prevent="hide_success_alert">✕</button>
+    <button class="close" @click.prevent="hideSuccessAlert">✕</button>
   </b-alert>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 export default {
   computed: {
-    ...mapState(['successAlert']),
+    ...mapGetters({
+      successAlert: 'alerts/getSuccessAlert',
+    }),
   },
+
+  watch: {
+    'successAlert.show': {
+      handler: function (val) {
+        let isAlertVisible = val;
+
+        if (isAlertVisible) {
+          this.$nextTick(() =>
+            this.$refs.successAlert.$el.scrollIntoView({ behavior: 'smooth' })
+          );
+        }
+      },
+    },
+  },
+
   methods: {
-    ...mapMutations(['hide_success_alert']),
+    ...mapMutations({
+      hideSuccessAlert: 'alerts/hide_success_alert',
+    }),
   },
 };
 </script>

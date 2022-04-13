@@ -93,14 +93,16 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['authStatus']),
+    ...mapGetters({
+      authStatus: 'auth/authStatus'
+    }),
   },
   methods: {
     login() {
       this.$v.$touch();
       if (!this.$v.$invalid) {
         this.$store
-          .dispatch('login', this.loginData)
+          .dispatch('auth/login', this.loginData)
           .then(() => this.$router.push('/'));
       }
     },

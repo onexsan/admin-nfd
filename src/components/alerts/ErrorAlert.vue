@@ -1,18 +1,42 @@
 <template>
-  <b-alert :show="errorAlert.show" class="admin-notification" variant="danger">
+  <b-alert
+    class="admin-notification"
+    ref="errorAlert"
+    variant="danger"
+    :show="errorAlert.show"
+  >
     {{ errorAlert.message }}
-    <button class="close" @click.prevent="hide_error_alert">✕</button>
+    <button class="close" @click.prevent="hideErrorAlert">✕</button>
   </b-alert>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 export default {
   computed: {
-    ...mapState(['errorAlert']),
+    ...mapGetters({
+      errorAlert: 'alerts/getErrorAlert',
+    }),
   },
+
+  watch: {
+    'errorAlert.show': {
+      handler: function (val) {
+        let isAlertVisible = val;
+
+        if (isAlertVisible) {
+          this.$nextTick(() =>
+            this.$refs.errorAlert.$el.scrollIntoView({ behavior: 'smooth' })
+          );
+        }
+      },
+    },
+  },
+
   methods: {
-    ...mapMutations(['hide_error_alert']),
+    ...mapMutations({
+      hideErrorAlert: 'alerts/hide_error_alert',
+    }),
   },
 };
 </script>
