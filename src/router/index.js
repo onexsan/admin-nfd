@@ -16,10 +16,15 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Login,
-    meta: {
-      title: 'Need For Drive',
-      layout: 'auth-layout',
+    redirect: () => {
+      return { path: '/login/' };
+    },
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    redirect: () => {
+      return { path: '/admin/order-list/' };
     },
   },
   {
@@ -85,6 +90,29 @@ const routes = [
     meta: {
       title: 'Need For Drive',
       layout: 'admin-layout',
+    },
+  },
+  {
+    path: '/admin/*',
+    name: 'Error404',
+    components: {
+      default: Error,
+      Sidebar: AdminSidebar,
+      Header: AdminHeader,
+      Footer: AdminFooter,
+    },
+    meta: {
+      title: 'Need For Drive',
+      layout: 'admin-layout',
+    },
+  },
+  {
+    path: '*',
+    name: 'UnauthorizedError404',
+    component: Error,
+    meta: {
+      title: 'Need For Drive',
+      layout: 'auth-layout',
     },
   },
 ];
