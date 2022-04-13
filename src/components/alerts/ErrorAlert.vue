@@ -1,18 +1,22 @@
 <template>
   <b-alert :show="errorAlert.show" class="admin-notification" variant="danger">
     {{ errorAlert.message }}
-    <button class="close" @click.prevent="hide_error_alert">✕</button>
+    <button class="close" @click.prevent="hideErrorAlert">✕</button>
   </b-alert>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 export default {
   computed: {
-    ...mapState(['errorAlert']),
+    ...mapGetters({
+      errorAlert: 'alerts/getErrorAlert',
+    }),
   },
   methods: {
-    ...mapMutations(['hide_error_alert']),
+    ...mapMutations({
+      hideErrorAlert: 'alerts/hide_error_alert',
+    }),
   },
 };
 </script>

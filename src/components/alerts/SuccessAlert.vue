@@ -7,18 +7,22 @@
     <span class="alert-icon alert-icon--success"></span>
     {{ successAlert.message }}
 
-    <button class="close" @click.prevent="hide_success_alert">✕</button>
+    <button class="close" @click.prevent="hideSuccessAlert">✕</button>
   </b-alert>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 export default {
   computed: {
-    ...mapState(['successAlert']),
+    ...mapGetters({
+      successAlert: 'alerts/getSuccessAlert',
+    }),
   },
   methods: {
-    ...mapMutations(['hide_success_alert']),
+    ...mapMutations({
+      hideSuccessAlert: 'alerts/hide_success_alert',
+    }),
   },
 };
 </script>

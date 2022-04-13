@@ -178,7 +178,7 @@ export default {
       this.$v.$touch();
     },
     showErrorAlert() {
-      this.$store.commit('show_error_alert', 'Test message');
+      this.$store.commit('alerts/show_error_alert', 'Test message');
     },
   },
 };
