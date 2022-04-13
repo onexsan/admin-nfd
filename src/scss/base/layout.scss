@@ -1,0 +1,66 @@
+body,
+html,
+.wrapper {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin: 0 auto;
+  font-family: 'Roboto', Tahoma, Verdana, sans-serif;
+  font-weight: normal;
+
+  @include phones {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-content {
+    background-color: $white;
+    width: 100%;
+
+    @include phones {
+      flex: 1;
+    }
+  }
+
+  .container {
+    height: 100%;
+    width: 100%;
+    padding-left: 64px;
+    padding-right: 64px;
+    max-width: none;
+
+    @include sm-desktops {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    @include phones {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}
+
+.title {
+  color: $black;
+  font-weight: bold;
+}
+
+h1.title {
+  font-size: 70px;
+  line-height: 1;
+
+  span {
+    display: block;
+    color: $green;
+  }
+
+  @include phones {
+    font-size: 32px;
+  }
+}
