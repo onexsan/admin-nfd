@@ -6,9 +6,9 @@
         <fieldset class="admin-block-header__filters">
           <div class="form-group">
             <b-form-select
+              class="admin-select"
               name="test1"
               id="test1"
-              class="admin-select"
               v-model="test1"
             >
               <b-form-select-option :value="null">Field</b-form-select-option>
@@ -16,9 +16,9 @@
           </div>
           <div class="form-group">
             <b-form-select
+              class="admin-select"
               name="test2"
               id="test2"
-              class="admin-select"
               v-model="test2"
             >
               <b-form-select-option :value="null">Field</b-form-select-option>
@@ -26,9 +26,9 @@
           </div>
           <div class="form-group">
             <b-form-select
+              class="admin-select"
               name="test3"
               id="test3"
-              class="admin-select"
               v-model="test3"
             >
               <b-form-select-option :value="null">Field</b-form-select-option>
@@ -36,9 +36,9 @@
           </div>
           <div class="form-group">
             <b-form-select
+              class="admin-select"
               name="test4"
               id="test4"
-              class="admin-select"
               v-model="test4"
             >
               <b-form-select-option :value="null">Field</b-form-select-option>
@@ -80,6 +80,9 @@
 <script>
 import Pagination from '@/components/common/Pagination.vue';
 export default {
+  components: {
+    Pagination,
+  },
   data() {
     return {
       test1: null,
@@ -216,9 +219,6 @@ export default {
     changePage(page) {
       this.page = page;
     },
-  },
-  components: {
-    Pagination,
   },
 };
 </script>
