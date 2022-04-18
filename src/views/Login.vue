@@ -2,14 +2,14 @@
   <section class="login">
     <div class="container login__container">
       <div class="login__wrapper">
-        <div class="login__logo login-logo">
-          <div class="login-logo__icon">
-            <svg>
+        <router-link to="/" class="login__logo admin-logo">
+          <div class="admin-logo__icon">
+            <svg width="45" height="45">
               <use xlink:href="#admin-logo"></use>
             </svg>
           </div>
-          <div class="login-logo__title">Need for drive</div>
-        </div>
+          <div class="admin-logo__title">Need for drive</div>
+        </router-link>
         <form class="login__form login-form">
           <legend class="login-form__title">Вход</legend>
           <fieldset>
@@ -19,12 +19,12 @@
             >
               <label for="email" class="label login-form__label">Почта</label>
               <input
+                v-model="loginData.email"
                 class="text-input"
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Введите e-mail"
-                v-model="loginData.email"
               />
               <p class="error">
                 {{
@@ -42,12 +42,12 @@
             >
               <label for="pass" class="label login-form__label">Пароль</label>
               <input
+                v-model="loginData.password"
                 class="text-input"
                 type="password"
                 id="pass"
                 name="pass"
                 placeholder="Введите пароль"
-                v-model="loginData.password"
               />
               <p class="error">
                 {{

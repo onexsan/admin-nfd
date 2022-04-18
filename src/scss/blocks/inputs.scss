@@ -144,6 +144,31 @@ input.text-input {
   .checkbox__input:checked ~ .checkbox__icon:after {
     display: block;
   }
+
+  &.checkbox--admin {
+    .checkbox__icon {
+      width: 13px;
+      height: 13px;
+      border-radius: 2px;
+
+      &:after {
+        width: 30%;
+        height: 60%;
+        top: 0;
+        bottom: 15%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-width: 0 1px 1px 0;
+      }
+    }
+
+    .checkbox__text {
+      font-size: 10px;
+      display: block;
+      color: #999999;
+    }
+  }
 }
 
 .date-time-picker .field.flex {
