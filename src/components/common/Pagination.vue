@@ -16,14 +16,20 @@
 <script>
 import AdminPagination from 'vue-pagination-2';
 export default {
-  props: ['records', 'perPage'],
+  components: {
+    AdminPagination,
+  },
+  props: {
+    records: Number,
+    perPage: {
+      type: Number,
+      default: 5,
+    },
+  },
   data() {
     return {
       page: 1,
     };
-  },
-  components: {
-    AdminPagination,
   },
   methods: {
     changePage(page) {

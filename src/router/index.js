@@ -14,13 +14,6 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/admin',
-    name: 'Admin',
-    redirect: () => {
-      return { path: '/admin/order-list/' };
-    },
-  },
-  {
     path: '/admin/order-list',
     name: 'OrderList',
     components: {
