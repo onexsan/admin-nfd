@@ -26,6 +26,11 @@ axios.defaults.baseURL = `https://api-factory.simbirsoft1.com/api`;
 axios.defaults.headers.common['X-Api-Factory-Application-Id'] =
   process.env.VUE_APP_APPLICATION_ID;
 
+let token = localStorage.getItem('token');
+if (token) {
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+}
+
 import ImageFallBack from './directives/imagefallback';
 Vue.directive('image-fall-back', ImageFallBack);
 

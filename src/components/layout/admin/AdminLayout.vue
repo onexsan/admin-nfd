@@ -3,10 +3,12 @@
     <router-view name="Sidebar" />
     <div class="main-content">
       <router-view name="Header" />
-      <div class="container admin__container">
+      <div class="container admin__container admin-view">
         <router-view />
       </div>
       <router-view name="Footer" />
+      <ErrorAlert />
+      <SuccessAlert />
     </div>
 
     <IconTemplate />
@@ -17,31 +19,16 @@
 <script>
 import IconTemplate from '@/components/common/IconTemplate.vue';
 import AdminMenuModal from '@/components/modals/AdminMenuModal.vue';
+import ErrorAlert from '@/components/alerts/ErrorAlert.vue';
+import SuccessAlert from '@/components/alerts/SuccessAlert.vue';
 export default {
   components: {
     IconTemplate,
     AdminMenuModal,
+    SuccessAlert,
+    ErrorAlert,
   },
 };
 </script>
 
-<style lang="scss">
-.admin-wrapper {
-  height: 100%;
-  background-color: $gray-admin;
-  font-family: Helvetica, Arial, sans-serif;
-  display: grid;
-  grid-template-columns: auto 1fr;
-
-  @include phones {
-    grid-template-columns: 1fr;
-  }
-}
-
-.admin-wrapper .main-content {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 0px;
-  background-color: $gray-admin;
-}
-</style>
+<style lang="scss"></style>

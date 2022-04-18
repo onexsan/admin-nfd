@@ -30,12 +30,12 @@ export default {
       links: [
         {
           title: 'Карточка автомобиля',
-          address: '/',
+          address: '/admin/edit/car/',
           icon: 'edit-icon',
         },
         {
           title: 'Список авто',
-          address: '/',
+          address: '/admin/test/1/',
           icon: 'posts-icon',
         },
         {
@@ -44,23 +44,23 @@ export default {
           icon: 'add-icon',
         },
         {
-          title: 'Menu 4',
-          address: '/',
+          title: 'Тестовые сущности',
+          address: '/admin/entities/test/',
           icon: 'overview-icon',
         },
         {
           title: 'Menu 5',
-          address: '/',
+          address: '/admin/test/2/',
           icon: 'forms-icon',
         },
         {
           title: 'Menu 6',
-          address: '/',
+          address: '/admin/test/3/',
           icon: 'user-icon',
         },
         {
           title: 'Menu 7',
-          address: '/',
+          address: '/admin/test/4/',
           icon: 'error-icon',
         },
       ],
