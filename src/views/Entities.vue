@@ -6,40 +6,40 @@
         <fieldset class="admin-block-header__filters">
           <div class="form-group">
             <b-form-select
+              v-model="test1"
               class="admin-select"
               name="test1"
               id="test1"
-              v-model="test1"
             >
               <b-form-select-option :value="null">Field</b-form-select-option>
             </b-form-select>
           </div>
           <div class="form-group">
             <b-form-select
+              v-model="test2"
               class="admin-select"
               name="test2"
               id="test2"
-              v-model="test2"
             >
               <b-form-select-option :value="null">Field</b-form-select-option>
             </b-form-select>
           </div>
           <div class="form-group">
             <b-form-select
+              v-model="test3"
               class="admin-select"
               name="test3"
               id="test3"
-              v-model="test3"
             >
               <b-form-select-option :value="null">Field</b-form-select-option>
             </b-form-select>
           </div>
           <div class="form-group">
             <b-form-select
+              v-model="test4"
               class="admin-select"
               name="test4"
               id="test4"
-              v-model="test4"
             >
               <b-form-select-option :value="null">Field</b-form-select-option>
             </b-form-select>

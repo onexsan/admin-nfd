@@ -107,29 +107,21 @@
     @include phones {
       font-size: 12px;
     }
-  }
-
-  &__item {
-    width: 100%;
-    margin: 0;
-    padding: 0;
 
     &--active {
-      .admin-sidebar-nav__link {
-        color: $bright-blue;
-        background: #fbfbfb;
+      color: $bright-blue;
+      background: #fbfbfb;
 
-        &:before {
-          content: '';
-          display: block;
-          height: 100%;
-          width: 4px;
-          background-color: $bright-blue;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-        }
+      &:before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 4px;
+        background-color: $bright-blue;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
       }
 
       .admin-sidebar-nav__icon {
@@ -137,5 +129,11 @@
           brightness(102%) contrast(110%);
       }
     }
+  }
+
+  &__item {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 }

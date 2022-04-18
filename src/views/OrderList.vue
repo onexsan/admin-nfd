@@ -6,10 +6,10 @@
         <fieldset class="admin-block-header__filters">
           <div class="form-group">
             <b-form-select
+              v-model="selected.range"
               name="time"
               id="time"
               class="admin-select"
-              v-model="selected.range"
             >
               <b-form-select-option :value="null"
                 >За неделю</b-form-select-option
@@ -18,20 +18,20 @@
           </div>
           <div class="form-group">
             <b-form-select
+              v-model="selected.model"
               name="model"
               id="model"
               class="admin-select"
-              v-model="selected.model"
             >
               <b-form-select-option :value="null">Elantra</b-form-select-option>
             </b-form-select>
           </div>
           <div class="form-group">
             <b-form-select
+              v-model="selected.city"
               name="city"
               id="city"
               class="admin-select"
-              v-model="selected.city"
             >
               <b-form-select-option :value="null"
                 >Ульяновск</b-form-select-option
@@ -40,10 +40,11 @@
           </div>
           <div class="form-group">
             <b-form-select
+            
+              v-model="selected.status"
               name="status"
               id="status"
               class="admin-select"
-              v-model="selected.status"
             >
               <b-form-select-option :value="null"
                 >В процессе</b-form-select-option

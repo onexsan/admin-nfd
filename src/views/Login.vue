@@ -19,12 +19,12 @@
             >
               <label for="email" class="label login-form__label">Почта</label>
               <input
+                v-model="loginData.email"
                 class="text-input"
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Введите e-mail"
-                v-model="loginData.email"
               />
               <p class="error">
                 {{
@@ -42,12 +42,12 @@
             >
               <label for="pass" class="label login-form__label">Пароль</label>
               <input
+                v-model="loginData.password"
                 class="text-input"
                 type="password"
                 id="pass"
                 name="pass"
                 placeholder="Введите пароль"
-                v-model="loginData.password"
               />
               <p class="error">
                 {{

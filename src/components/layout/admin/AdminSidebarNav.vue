@@ -1,76 +1,70 @@
 <template>
   <nav class="admin-sidebar__nav admin-sidebar-nav">
     <ul class="admin-sidebar-nav__list">
-      <li class="admin-sidebar-nav__item admin-sidebar-nav__item--active">
-        <router-link to="/" class="admin-sidebar-nav__link">
+      <li
+        v-for="link in links"
+        :key="link.title"
+        class="admin-sidebar-nav__item"
+      >
+        <router-link
+          :to="link.address"
+          class="admin-sidebar-nav__link"
+          exact-active-class="admin-sidebar-nav__link--active"
+        >
           <div class="admin-sidebar-nav__icon">
             <svg width="13" height="14">
-              <use xlink:href="#edit-icon"></use>
+              <use :xlink:href="`#${link.icon}`"></use>
             </svg>
           </div>
-          <span>Карточка автомобиля</span>
-        </router-link>
-      </li>
-      <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
-          <div class="admin-sidebar-nav__icon">
-            <svg width="13" height="14">
-              <use xlink:href="#posts-icon"></use>
-            </svg>
-          </div>
-          <span>Список авто</span>
-        </router-link>
-      </li>
-      <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
-          <div class="admin-sidebar-nav__icon">
-            <svg width="13" height="14">
-              <use xlink:href="#add-icon"></use>
-            </svg>
-          </div>
-          <span>Заказы</span>
-        </router-link>
-      </li>
-      <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
-          <div class="admin-sidebar-nav__icon">
-            <svg width="13" height="14">
-              <use xlink:href="#overview-icon"></use>
-            </svg>
-          </div>
-          <span>Menu 4</span>
-        </router-link>
-      </li>
-      <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
-          <div class="admin-sidebar-nav__icon">
-            <svg width="13" height="14">
-              <use xlink:href="#forms-icon"></use>
-            </svg>
-          </div>
-          <span>Menu 5</span>
-        </router-link>
-      </li>
-      <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
-          <div class="admin-sidebar-nav__icon">
-            <svg width="13" height="14">
-              <use xlink:href="#user-icon"></use>
-            </svg>
-          </div>
-          <span>Menu 6</span>
-        </router-link>
-      </li>
-      <li class="admin-sidebar-nav__item">
-        <router-link to="/" class="admin-sidebar-nav__link">
-          <div class="admin-sidebar-nav__icon">
-            <svg width="13" height="14">
-              <use xlink:href="#error-icon"></use>
-            </svg>
-          </div>
-          <span>Menu 7</span>
+          <span>{{ link.title }}</span>
         </router-link>
       </li>
     </ul>
   </nav>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      links: [
+        {
+          title: 'Карточка автомобиля',
+          address: '/',
+          icon: 'edit-icon',
+        },
+        {
+          title: 'Список авто',
+          address: '/',
+          icon: 'posts-icon',
+        },
+        {
+          title: 'Заказы',
+          address: '/admin/order-list/',
+          icon: 'add-icon',
+        },
+        {
+          title: 'Тестовые сущности',
+          address: '/admin/entities/test/',
+          icon: 'overview-icon',
+        },
+        {
+          title: 'Menu 5',
+          address: '/',
+          icon: 'forms-icon',
+        },
+        {
+          title: 'Menu 6',
+          address: '/',
+          icon: 'user-icon',
+        },
+        {
+          title: 'Menu 7',
+          address: '/',
+          icon: 'error-icon',
+        },
+      ],
+    };
+  },
+};
+</script>

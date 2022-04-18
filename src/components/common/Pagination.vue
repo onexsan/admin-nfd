@@ -4,11 +4,11 @@
       v-model="page"
       :records="records"
       :per-page="perPage"
-      @paginate="changePage"
       :options="{
         chunk: 5,
         chunksNavigation: 'scroll',
       }"
+      @paginate="changePage"
     />
   </div>
 </template>
