@@ -18,7 +18,7 @@ form.order-form input.field-input {
 input.text-input {
   border: 1px solid #becad6;
   border-radius: 4px;
-  padding: 8px 11px;
+  padding: 6px 11px;
   font-size: 11px;
 }
 
@@ -145,7 +145,8 @@ input.text-input {
     display: block;
   }
 
-  &.checkbox--admin {
+  &.checkbox--admin,
+  &.checkbox--blue {
     .checkbox__icon {
       width: 13px;
       height: 13px;
@@ -167,6 +168,31 @@ input.text-input {
       font-size: 10px;
       display: block;
       color: #999999;
+    }
+  }
+
+  &.checkbox--blue {
+    .checkbox__text {
+      color: #495057;
+    }
+
+    &:hover {
+      .checkbox__icon {
+        border-color: $bright-blue;
+      }
+    }
+
+    .checkbox__input:checked ~ .checkbox__icon {
+      border-color: $bright-blue;
+      background-color: $bright-blue;
+
+      &:after {
+        border-color: #ffffff;
+      }
+    }
+
+    .checkbox__input:checked ~ .checkbox__text {
+      color: #495057;
     }
   }
 }

@@ -1,7 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Login from '../views/Login.vue';
+import Error from '../views/Error.vue';
 import OrderList from '../views/OrderList.vue';
+import Entities from '../views/Entities.vue';
+import EditPage from '../views/EditPage.vue';
 
 import AdminSidebar from '../components/layout/admin/AdminSidebar.vue';
 import AdminHeader from '../components/layout/admin/AdminHeader.vue';
@@ -25,9 +28,74 @@ const routes = [
     },
   },
   {
+    path: '/admin/entities/:id',
+    name: 'Entities',
+    components: {
+      default: Entities,
+      Sidebar: AdminSidebar,
+      Header: AdminHeader,
+      Footer: AdminFooter,
+    },
+    meta: {
+      title: 'Need For Drive',
+      layout: 'admin-layout',
+    },
+  },
+  {
+    path: '/admin/edit/:id',
+    name: 'EditPage',
+    components: {
+      default: EditPage,
+      Sidebar: AdminSidebar,
+      Header: AdminHeader,
+      Footer: AdminFooter,
+    },
+    meta: {
+      title: 'Need For Drive',
+      layout: 'admin-layout',
+    },
+  },
+  {
     path: '/login/',
     name: 'Login',
     component: Login,
+    meta: {
+      title: 'Need For Drive',
+      layout: 'auth-layout',
+    },
+  },
+  {
+    path: '/admin/error/',
+    name: 'Error',
+    components: {
+      default: Error,
+      Sidebar: AdminSidebar,
+      Header: AdminHeader,
+      Footer: AdminFooter,
+    },
+    meta: {
+      title: 'Need For Drive',
+      layout: 'admin-layout',
+    },
+  },
+  {
+    path: '/admin/*',
+    name: 'Error404',
+    components: {
+      default: Error,
+      Sidebar: AdminSidebar,
+      Header: AdminHeader,
+      Footer: AdminFooter,
+    },
+    meta: {
+      title: 'Need For Drive',
+      layout: 'admin-layout',
+    },
+  },
+  {
+    path: '*',
+    name: 'UnauthorizedError404',
+    component: Error,
     meta: {
       title: 'Need For Drive',
       layout: 'auth-layout',

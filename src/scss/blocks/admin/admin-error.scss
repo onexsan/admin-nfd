@@ -1,0 +1,54 @@
+.admin-error {
+  height: 100%;
+
+  .admin-error__type {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 75px;
+    color: #cacedb;
+    margin-bottom: 13px;
+    line-height: 1;
+
+    @include phones {
+      font-size: 48px;
+    }
+  }
+
+  .admin-error__title {
+    font-weight: 400;
+    font-size: 50px;
+    color: $dark-blue;
+    margin-bottom: 15px;
+    line-height: 1;
+    letter-spacing: -2.5px;
+    @include phones {
+      font-size: 28px;
+    }
+  }
+  .admin-error__message {
+    font-weight: 400;
+    font-size: 20px;
+    color: #818ea3;
+    margin-bottom: 35px;
+    line-height: 1;
+
+    @include phones {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 9px 15px;
+    min-width: 95px;
+  }
+}
+
+.admin-error,
+.admin-error__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

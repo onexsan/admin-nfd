@@ -16,6 +16,28 @@ a.btn {
     }
   }
 
+  &.btn-delete {
+    background: $error-red;
+    color: #ffffff;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $gradient-red;
+    }
+  }
+
+  &.btn-secondary {
+    background: #e9ecef;
+    color: $dark-blue;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: #c9ccce;
+    }
+  }
+
   &:hover {
     background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
     color: $white;
@@ -42,9 +64,6 @@ a.btn {
     background: $bright-blue;
     color: #ffffff;
     font-weight: 400;
-    font-size: 12px;
-    padding: 11px 7px;
-    line-height: 1;
     &:hover,
     &:active,
     &:focus {
@@ -56,6 +75,48 @@ a.btn {
     border: 1px solid #becad6;
     background: #ffffff;
     color: #5a6169;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid #becad6;
+      background: $gray-admin;
+    }
+  }
+
+  &.btn-add {
+    background: #ffffff;
+    border: 1px solid #becad6;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-weight: normal;
+    position: relative;
+
+    &:after {
+      content: '';
+      height: 80%;
+      width: 80%;
+      background-image: url('~@/assets/icons/close-btn.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      color: #becad6;
+      filter: brightness(80%);
+      transform: rotate(45deg);
+    }
 
     &:hover,
     &:active,

@@ -82,3 +82,86 @@
     }
   }
 }
+
+.admin-wrapper {
+  height: 100%;
+  background-color: $gray-admin;
+  font-family: Helvetica, Arial, sans-serif;
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  @include phones {
+    grid-template-columns: 1fr;
+  }
+}
+
+.admin-wrapper .main-content {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0px;
+  background-color: $gray-admin;
+  position: relative;
+
+  .admin-view {
+    margin-bottom: 50px;
+  }
+}
+
+.alert.admin-notification {
+  width: 100%;
+  position: absolute;
+  top: 68px;
+  border-radius: 0px;
+  font-size: 13px;
+  border: none;
+
+  .close {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    margin: auto 0;
+    opacity: 1;
+    text-shadow: none;
+    color: #ffffff;
+    font-size: 14px;
+  }
+
+  &.alert-success {
+    background: $green;
+    color: #ffffff;
+  }
+
+  &.alert-danger {
+    .close {
+      color: $error-red;
+    }
+  }
+}
+
+.alert-icon {
+  position: relative;
+  height: 17px;
+  width: 17px;
+  display: inline-block;
+
+  &:after {
+    content: '';
+    position: absolute;
+    border: solid #ffffff;
+    transform: rotate(45deg);
+    width: 30%;
+    height: 60%;
+    top: 0;
+    bottom: -20%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+.admin-content,
+.admin-edit {
+  height: 100%;
+}

@@ -1,0 +1,185 @@
+<template>
+  <div class="admin-content">
+    <h1 class="admin-title">Карточка автомобиля</h1>
+    <div class="admin-edit">
+      <form class="admin-edit__card admin-block p-0 edit-card">
+        <div class="form-group edit-card__header">
+          <div class="edit-card__image">
+            <img :src="require('@/assets/img/car-example.png')" alt="" />
+          </div>
+          <div class="edit-card__title">Hyndai, i30 N</div>
+          <div class="edit-card__subtitle">Компакт-кар</div>
+          <div class="edit-card__load">
+            <b-form-file accept="image/*" size="sm"></b-form-file>
+          </div>
+        </div>
+        <div class="edit-card__progress edit-card-progress form-group">
+          <div class="edit-card-progress__desc">
+            <div class="edit-card__label">Заполнено</div>
+            <span class="edit-card-progress__percent">75%</span>
+          </div>
+          <b-progress :value="75"></b-progress>
+        </div>
+        <div class="edit-card__description form-group">
+          <div class="edit-card__label"><b>Описание</b></div>
+          <div class="edit-card__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque,
+            quidem, commodi soluta qui quae quod dolorum sint alias, possimus
+            illum assumenda eligendi cumque?
+          </div>
+        </div>
+      </form>
+      <form class="admin-edit__main admin-block edit-main">
+        <fieldset class="edit-main__inputs">
+          <legend class="edit-main__legend">Настройки автомобиля</legend>
+          <b-row>
+            <b-col>
+              <div
+                class="form-group"
+                :class="{ 'form-group--error': $v.itemData.model.$error }"
+              >
+                <label for="model" class="label">Модель автомобиля</label>
+                <input
+                  v-model="itemData.model"
+                  type="text"
+                  name="model"
+                  id="model"
+                  class="text-input"
+                  placeholder="Укажите модель"
+                />
+                <p class="error">Поле обязательно для заполнения.</p>
+              </div>
+            </b-col>
+            <b-col>
+              <div
+                class="form-group"
+                :class="{ 'form-group--error': $v.itemData.type.$error }"
+              >
+                <label for="type" class="label">Тип автомобиля</label>
+                <input
+                  v-model="itemData.type"
+                  type="text"
+                  name="type"
+                  id="type"
+                  class="text-input"
+                  placeholder="Укажите тип"
+                />
+                <p class="error">Поле обязательно для заполнения.</p>
+              </div>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col>
+              <div
+                class="form-group"
+                :class="{ 'form-group--error': $v.itemData.color.$error }"
+              >
+                <label for="colors" class="label">Доступные цвета</label>
+                <div class="input-group-add">
+                  <input
+                    v-model="itemData.color"
+                    type="text"
+                    name="colors"
+                    id="colors"
+                    class="text-input"
+                    placeholder="Укажите цвет"
+                  />
+                  <button class="btn btn-add"></button>
+                </div>
+
+                <p class="error">Поле обязательно для заполнения.</p>
+              </div>
+              <div class="form-group-checkbox">
+                <label class="checkbox checkbox--blue" for="color1">
+                  <input
+                    type="checkbox"
+                    class="checkbox__input"
+                    name="color1"
+                    id="color1"
+                  />
+                  <span class="checkbox__text">Красный</span>
+                  <span class="checkbox__icon"></span>
+                </label>
+              </div>
+              <div class="form-group-checkbox">
+                <label class="checkbox checkbox--blue" for="color2">
+                  <input
+                    type="checkbox"
+                    class="checkbox__input"
+                    name="color2"
+                    id="color2"
+                  />
+                  <span class="checkbox__text">Белый</span>
+                  <span class="checkbox__icon"></span>
+                </label>
+              </div>
+              <div class="form-group-checkbox">
+                <label class="checkbox checkbox--blue" for="color3">
+                  <input
+                    type="checkbox"
+                    class="checkbox__input"
+                    name="color3"
+                    id="color3"
+                  />
+                  <span class="checkbox__text">Чёрный</span>
+                  <span class="checkbox__icon"></span>
+                </label>
+              </div>
+            </b-col>
+          </b-row>
+        </fieldset>
+        <fieldset class="edit-main__controls edit-main-controls">
+          <div class="edit-main-controls__group">
+            <button
+              class="btn btn-primary"
+              type="submit"
+              @click.prevent="submitForm()"
+            >
+              Сохранить
+            </button>
+            <button class="btn btn-secondary">Отменить</button>
+          </div>
+          <div
+            class="edit-main-controls__group"
+            @click.prevent="showTop = !showTop"
+          >
+            <button class="btn btn-delete" @click.prevent="showErrorAlert">
+              Удалить
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</template>
+
+<script>
+import { required } from 'vuelidate/lib/validators';
+export default {
+  data() {
+    return {
+      itemData: {
+        model: '',
+        type: '',
+        color: '',
+      },
+      showTop: false,
+    };
+  },
+  validations: {
+    itemData: {
+      model: { required },
+      type: { required },
+      color: { required },
+    },
+  },
+  methods: {
+    submitForm() {
+      this.$v.$touch();
+    },
+    showErrorAlert() {
+      this.$store.commit('show_error_alert', 'Test message');
+    },
+  },
+};
+</script>
