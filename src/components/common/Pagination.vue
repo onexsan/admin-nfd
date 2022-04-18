@@ -1,13 +1,13 @@
 <template>
   <div class="admin-pagination">
     <AdminPagination
+      v-model="page"
       :records="records"
       :per-page="5"
       :options="{
         chunk: 5,
       }"
       @paginate="changePage"
-      v-model="page"
     />
   </div>
 </template>
