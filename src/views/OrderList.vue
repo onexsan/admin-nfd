@@ -7,9 +7,9 @@
           <div class="form-group">
             <b-form-select
               v-model="selected.range"
+              class="admin-select"
               name="time"
               id="time"
-              class="admin-select"
             >
               <b-form-select-option :value="null"
                 >За неделю</b-form-select-option
@@ -19,9 +19,9 @@
           <div class="form-group">
             <b-form-select
               v-model="selected.model"
+              class="admin-select"
               name="model"
               id="model"
-              class="admin-select"
             >
               <b-form-select-option :value="null">Elantra</b-form-select-option>
             </b-form-select>
@@ -29,9 +29,9 @@
           <div class="form-group">
             <b-form-select
               v-model="selected.city"
+              class="admin-select"
               name="city"
               id="city"
-              class="admin-select"
             >
               <b-form-select-option :value="null"
                 >Ульяновск</b-form-select-option
@@ -40,11 +40,10 @@
           </div>
           <div class="form-group">
             <b-form-select
-            
               v-model="selected.status"
+              class="admin-select"
               name="status"
               id="status"
-              class="admin-select"
             >
               <b-form-select-option :value="null"
                 >В процессе</b-form-select-option
@@ -75,7 +74,8 @@
 
 <script>
 import Pagination from '@/components/common/Pagination.vue';
-import AdminOrdersItem from '@/components/pages/admin/order-list/AdminOrdersItem.vue';
+import AdminOrdersItem from '@/components/order-list/AdminOrdersItem.vue';
+
 export default {
   components: {
     Pagination,
