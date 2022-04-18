@@ -40,12 +40,12 @@
               >
                 <label for="model" class="label">Модель автомобиля</label>
                 <input
+                  v-model="itemData.model"
                   type="text"
                   name="model"
                   id="model"
                   class="text-input"
                   placeholder="Укажите модель"
-                  v-model="itemData.model"
                 />
                 <p class="error">Поле обязательно для заполнения.</p>
               </div>
@@ -57,12 +57,12 @@
               >
                 <label for="type" class="label">Тип автомобиля</label>
                 <input
+                  v-model="itemData.type"
                   type="text"
                   name="type"
                   id="type"
                   class="text-input"
                   placeholder="Укажите тип"
-                  v-model="itemData.type"
                 />
                 <p class="error">Поле обязательно для заполнения.</p>
               </div>
@@ -77,12 +77,12 @@
                 <label for="colors" class="label">Доступные цвета</label>
                 <div class="input-group-add">
                   <input
+                    v-model="itemData.color"
                     type="text"
                     name="colors"
                     id="colors"
                     class="text-input"
                     placeholder="Укажите цвет"
-                    v-model="itemData.color"
                   />
                   <button class="btn btn-add"></button>
                 </div>

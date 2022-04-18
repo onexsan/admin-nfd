@@ -7,7 +7,7 @@
       <div class="admin-error__title">
         {{ is404 ? 'Страница не найдена' : 'Что-то пошло не так.' }}
       </div>
-      <div class="admin-error__message" v-if="!is404">
+      <div v-if="!is404" class="admin-error__message">
         Попробуйте перезагрузить страницу
       </div>
       <button class="btn btn-primary" @click="$router.go(-1)">Назад</button>
