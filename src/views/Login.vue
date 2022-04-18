@@ -21,12 +21,12 @@
                 >Логин</label
               >
               <input
+                v-model="loginData.username"
                 class="text-input"
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Введите e-mail"
-                v-model="loginData.username"
               />
               <p class="error">
                 {{
@@ -42,12 +42,12 @@
             >
               <label for="pass" class="label login-form__label">Пароль</label>
               <input
+                v-model="loginData.password"
                 class="text-input"
                 type="password"
                 id="pass"
                 name="pass"
                 placeholder="Введите пароль"
-                v-model="loginData.password"
                 autocomplete="on"
               />
               <p class="error">
@@ -94,7 +94,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      authStatus: 'auth/authStatus'
+      authStatus: 'auth/authStatus',
     }),
   },
   methods: {
