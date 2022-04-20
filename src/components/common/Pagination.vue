@@ -3,9 +3,10 @@
     <AdminPagination
       v-model="page"
       :records="records"
-      :per-page="5"
+      :per-page="perPage"
       :options="{
         chunk: 5,
+        chunksNavigation: 'scroll',
       }"
       @paginate="changePage"
     />
@@ -20,6 +21,10 @@ export default {
   },
   props: {
     records: Number,
+    perPage: {
+      type: Number,
+      default: 5
+    }
   },
   data() {
     return {

@@ -45,7 +45,9 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {},
+    "rules": {
+      "prefer-const": 1
+    },
     "globals": {
       "ymaps": "writable"
     }
