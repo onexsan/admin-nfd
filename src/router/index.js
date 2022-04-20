@@ -12,6 +12,12 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: '/admin/',
+    redirect: () => {
+      return '/admin/order-list/';
+    },
+  },
+  {
     path: '/admin/order-list',
     name: 'OrderList',
     components: {

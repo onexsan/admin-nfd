@@ -9,8 +9,8 @@
       <router-view name="Footer" />
     </div>
 
-    <IconTemplate />
-    <AdminMenuModal />
+    <icon-template />
+    <admin-menu-modal />
   </div>
 </template>
 

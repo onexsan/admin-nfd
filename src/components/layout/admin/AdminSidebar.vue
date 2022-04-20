@@ -10,7 +10,7 @@
         <div class="admin-logo__title">Need for car</div>
       </router-link>
     </div>
-    <AdminSidebarNav />
+    <admin-sidebar-nav />
   </aside>
 </template>
 
