@@ -2,7 +2,7 @@
   <div class="auth-wrapper">
     <router-view></router-view>
 
-    <IconTemplate />
+    <icon-template />
   </div>
 </template>
 

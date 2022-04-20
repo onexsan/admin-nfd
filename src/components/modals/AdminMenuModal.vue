@@ -27,7 +27,7 @@
           </svg>
         </button>
       </div>
-      <AdminSidebarNav />
+      <admin-sidebar-nav />
     </div>
   </b-modal>
 </template>

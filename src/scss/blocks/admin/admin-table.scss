@@ -1,0 +1,53 @@
+.admin-table {
+  padding: 0px 20px;
+
+  @include phones {
+    max-width: 90vw;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ffffff;
+      border: 1px solid $lightgray;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $gray;
+      border: 2px solid white;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: $green;
+    }
+  }
+
+  .table {
+    color: $dark-blue;
+    font-size: 12px;
+
+    thead th,
+    td {
+      border: none;
+      text-align: center;
+      padding: 11px;
+
+      &:nth-child(1) {
+        text-align: left;
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    td {
+      color: $dark-gray-admin;
+
+      &:nth-child(1) {
+        color: $dark-blue;
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 <template>
   <div class="admin-content">
     <h1 class="admin-title">Заказы</h1>
-    <div class="admin-block admin-orders">
-      <b-form class="admin-orders__header admin-orders-header">
-        <fieldset class="admin-orders-header__filters">
+    <div class="admin-block admin-orders p-0">
+      <b-form class="admin-block__header admin-block-header">
+        <fieldset class="admin-block-header__filters">
           <div class="form-group">
             <b-form-select
               v-model="selected.range"
@@ -51,11 +51,11 @@
             </b-form-select>
           </div>
         </fieldset>
-        <fieldset class="admin-orders-header__controls">
+        <fieldset class="admin-block-header__controls">
           <div class="form-group">
             <button
               type="submit"
-              class="btn btn-primary admin-orders-header__apply-btn"
+              class="btn btn-primary admin-block-header__apply-btn"
             >
               Применить
             </button>
@@ -63,10 +63,10 @@
         </fieldset>
       </b-form>
       <div class="admin-orders__list admin-orders-list">
-        <AdminOrdersItem v-for="n in 3" :key="n" />
+        <admin-orders-item v-for="n in 3" :key="n" />
       </div>
-      <div class="admin-orders__footer admin-orders-footer">
-        <Pagination :records="150" @changePage="changePage" />
+      <div class="admin-block__footer admin-block-footer">
+        <pagination :records="150" @changePage="changePage" />
       </div>
     </div>
   </div>
