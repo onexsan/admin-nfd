@@ -7,8 +7,8 @@
         <router-view />
       </div>
       <router-view name="Footer" />
-      <ErrorAlert />
-      <SuccessAlert />
+      <error-alert />
+      <success-alert />
     </div>
 
     <IconTemplate />
@@ -30,5 +30,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss"></style>

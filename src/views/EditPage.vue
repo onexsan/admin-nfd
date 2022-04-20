@@ -143,7 +143,7 @@
             class="edit-main-controls__group"
             @click.prevent="showTop = !showTop"
           >
-            <button class="btn btn-delete" @click.prevent="showErrorAlert">
+            <button class="btn btn-delete" @click.prevent="showErrorMessage">
               Удалить
             </button>
           </div>
@@ -154,6 +154,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 import { required } from 'vuelidate/lib/validators';
 export default {
   data() {
@@ -174,11 +175,14 @@ export default {
     },
   },
   methods: {
+    ...mapMutations({
+      showError: 'alerts/show_error_alert',
+    }),
     submitForm() {
       this.$v.$touch();
     },
-    showErrorAlert() {
-      this.$store.commit('alerts/show_error_alert', 'Test message');
+    showErrorMessage() {
+      this.showError('Test message');
     },
   },
 };

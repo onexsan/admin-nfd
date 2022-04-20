@@ -35,7 +35,7 @@ export default {
         },
         {
           title: 'Список авто',
-          address: '/',
+          address: '/admin/',
           icon: 'posts-icon',
         },
         {
@@ -50,17 +50,17 @@ export default {
         },
         {
           title: 'Menu 5',
-          address: '/',
+          address: '/admin/',
           icon: 'forms-icon',
         },
         {
           title: 'Menu 6',
-          address: '/',
+          address: '/admin/',
           icon: 'user-icon',
         },
         {
           title: 'Menu 7',
-          address: '/',
+          address: '/admin/',
           icon: 'error-icon',
         },
       ],

@@ -7,11 +7,11 @@ const state = {
 
 const mutations = {
   start_loading(state, payload) {
-    let block = state[payload];
+    const block = state[payload];
     block.status = 'loading';
   },
   finish_loading(state, payload) {
-    let block = state[payload];
+    const block = state[payload];
     block.status = '';
   },
   auth_success(state, token) {
@@ -19,7 +19,7 @@ const mutations = {
     state.token = token;
   },
   throw_error(state, payload) {
-    let block = state[payload];
+    const block = state[payload];
     block.status = 'error';
   },
 };
@@ -30,7 +30,7 @@ const actions = {
     const secret = process.env.VUE_APP_SECRET;
     const basic = Buffer.from(`11d7c9f` + ':' + secret).toString('base64');
     try {
-      let resp = await axios({
+      const resp = await axios({
         method: 'post',
         url: '/auth/login',
         data: {
@@ -49,7 +49,6 @@ const actions = {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       commit('auth_success', token);
     } catch (error) {
-      console.log(error);
       commit('throw_error', 'auth');
       localStorage.removeItem('token');
     }
