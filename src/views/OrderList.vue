@@ -63,10 +63,10 @@
         </fieldset>
       </b-form>
       <div class="admin-orders__list admin-orders-list">
-        <AdminOrdersItem v-for="n in 3" :key="n" />
+        <admin-orders-item v-for="n in 3" :key="n" />
       </div>
       <div class="admin-block__footer admin-block-footer">
-        <Pagination :records="150" @changePage="changePage" />
+        <pagination :records="150" @changePage="changePage" />
       </div>
     </div>
   </div>

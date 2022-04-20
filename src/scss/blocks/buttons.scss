@@ -40,7 +40,7 @@ a.btn {
 
   &.btn-primary {
     background: $bright-blue;
-    color: #ffffff;
+    color: $white;
     font-weight: 400;
     font-size: 12px;
     padding: 11px 7px;
@@ -55,7 +55,7 @@ a.btn {
   &.btn-outline-primary {
     border: 1px solid #becad6;
     background: #ffffff;
-    color: #5a6169;
+    color: $dark-gray;
 
     &:hover,
     &:active,

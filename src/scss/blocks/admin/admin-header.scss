@@ -1,5 +1,5 @@
 .admin-header {
-  background-color: #ffffff;
+  background-color: $white;
 
   .admin__container {
     display: grid;
@@ -100,7 +100,7 @@
     width: 14px;
     height: 14px;
     font-size: 9px;
-    color: #ffffff;
+    color: $white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,13 +145,13 @@
     text-decoration: none;
     font-weight: 400;
     font-size: 15px;
-    color: #5a6169;
+    color: $dark-gray;
 
     &:hover {
-      color: #000000;
+      color: $black;
 
       &::before {
-        border-color: #000000 transparent transparent transparent;
+        border-color: $black transparent transparent transparent;
       }
     }
 
@@ -165,7 +165,7 @@
       height: 0;
       border-style: solid;
       border-width: 5px 4.5px 0 4.5px;
-      border-color: #aabacc transparent transparent transparent;
+      border-color: $dark-gray-admin transparent transparent transparent;
       position: absolute;
       top: 0;
       bottom: 0;

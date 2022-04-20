@@ -11,7 +11,9 @@
               name="test1"
               id="test1"
             >
-              <b-form-select-option :value="null">Field</b-form-select-option>
+              <b-form-select-option :value="null">
+                Test Field
+              </b-form-select-option>
             </b-form-select>
           </div>
           <div class="form-group">
@@ -21,7 +23,9 @@
               name="test2"
               id="test2"
             >
-              <b-form-select-option :value="null">Field</b-form-select-option>
+              <b-form-select-option :value="null">
+                Test Field
+              </b-form-select-option>
             </b-form-select>
           </div>
           <div class="form-group">
@@ -31,7 +35,9 @@
               name="test3"
               id="test3"
             >
-              <b-form-select-option :value="null">Field</b-form-select-option>
+              <b-form-select-option :value="null">
+                Test Field
+              </b-form-select-option>
             </b-form-select>
           </div>
           <div class="form-group">
@@ -41,7 +47,9 @@
               name="test4"
               id="test4"
             >
-              <b-form-select-option :value="null">Field</b-form-select-option>
+              <b-form-select-option :value="null">
+                Test Field
+              </b-form-select-option>
             </b-form-select>
           </div>
         </fieldset>
@@ -67,9 +75,9 @@
         ></b-table>
       </div>
       <div class="admin-block__footer admin-block-footer">
-        <Pagination
+        <pagination
           :records="items.length"
-          :perPage="perPage"
+          :per-page="perPage"
           @changePage="changePage"
         />
       </div>

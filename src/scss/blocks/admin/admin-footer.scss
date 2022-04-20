@@ -1,5 +1,5 @@
 .admin-footer {
-  background-color: #ffffff;
+  background-color: $white;
   height: 68px;
 
   .admin__container {
@@ -15,7 +15,7 @@
     font-weight: 500;
     font-size: 14px;
     text-align: right;
-    color: #818ea3;
+    color: $dark-gray;
 
     @include phones {
       width: 50%;

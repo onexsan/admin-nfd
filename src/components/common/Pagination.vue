@@ -1,6 +1,6 @@
 <template>
   <div class="admin-pagination">
-    <AdminPagination
+    <admin-pagination
       v-model="page"
       :records="records"
       :per-page="perPage"
